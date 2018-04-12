@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+	<title>로그인</title>
+
+	<style type="text/css">
+
+	body {
+  background: #76b852;      
+}
+.form {
+	margin: auto;
+	margin-top: calc(50vh - 290px/2);
+  position: relative;
+  background: #FFFFFF;
+  max-width: 360px;
+  height: 200px;
+  padding: 45px;
+  text-align: center;
+}
+
+	#login_menu
+	{
+		text-align:center;
+	}
+	</style>
+
+	<script type="text/javascript">
+		function ck_blink() {
+			var id=$('#id').value;
+
+			if(!document.login.login_id.value){
+				alert("아이디를 입력하시요");
+				$('#id').focus();
+				return false;
+			}
+
+			if (!document.login.login_pw.value) {
+				alert("비밀번호를 입력하시요");
+				$('#pw').focus();
+				return false;
+			}
+		}
+		function signup(){
+
+			location.href="signup.php";
+		}
+	</script>
+
+</head>
+<body>
+<div class="form">
+		<form name="login" method="post" action="login.php">
+			<div id="login_menu">
+			<div class="head">
+			<h1>LOGIN</h1>
+			<p>
+			</div>
+			<input id="id" class="login" type="text" name="login_id" placeholder="ID" required="ck_blink()">
+			<p>
+			<input id="pw" class="login" type="password" name="login_pw" placeholder="PASSWORD" required="ck_blink()">
+			<p>
+			<input type="submit" name="login" id="login_button" value="로그인" onclick="id_ck()">
+			<input type="button" id="login_button" value="회원가입" onclick="location.href='signup.html'">
+			</div>
+		</form>
+		</div>
+</body>
+</html>

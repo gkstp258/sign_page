@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <script type="text/javascript">
+	
+	function ck_blink(){
+		if(!document.signup.id.value){
+			alert("아이디를 입력하시요");
+			return false;
+		}
+
+		if (!document.signup.pw.value) {
+			alert("비밀번호를 입력하시요");
+			return false;
+		}
+
+		if(!document.signup.username.value){
+			alert("이름을 입력하시요");
+			return false;
+		}
+
+		if(!document.signup.email.value){
+			alert("이메일을 입력하시요");
+			return false;
+		}
+	}
+	</script>
+ </head>
+ <body>
+  <section style="margin-top: 25px;">
+<form name="signup" method="post" action="signup.php">
+  <fieldset id="signfieldset">
+  	<legend id="signlegend" style="text-align: center;">
+	<div class="head"><strong>Sign Up</strong>
+	</div>
+	</legend>
+  	<div id="input">
+  		<label>Id</label>
+  		<input id="id_sign" class="sign" type="text" maxlength="20" name="id" placeholder="아이디를 입력해주세요" required="ck_blink()"><p>
+
+  		<label>Password</label>
+  		<input class="sign" type="Password" name="pw" maxlength="20" placeholder="비밀번호를 입력" required="ck_blink()">
+		<p>
+
+  		<label>Name</label>
+  		<input class="sign" type="text" name="name" maxlength="20" placeholder="이름을 입력하세요" required="ck_blink()">
+		<p>
+
+  		<label>Email</label>
+  		<input class="sign" type="email" name="email" maxlength="35" placeholder="이메일를 입력해주세요" required="ck_blink()">
+		<p>
+			</div>
+		<input class="button" type="submit" value="가입하기" onclick="ck_blink()">
+		<input class="button" type="reset" value="초기화">
+  	</div>
+	</fieldset>
+</form>
+</section>
+ </body>
+</html>
